@@ -1,0 +1,21 @@
+.center-input-button {
+    display: flex;
+    align-items: center;
+}
+.button-input{
+    margin-left: 5px;
+}
+
+h3{
+    margin-bottom: 20px;
+    margin-top: 150px;
+    /* make it center */
+    text-align: center;
+    /* fancy font */
+    font-family: 'Lobster', cursive;
+    /* fancy size */
+    font-size: 40px;
+    /* fancy color */
+    color: #219C90;
+
+}
