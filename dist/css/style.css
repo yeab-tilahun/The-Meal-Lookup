@@ -50,3 +50,39 @@ body::before {
     filter: blur(4px);
     z-index: -1;
 }
+
+
+
+/* detail page */
+li img {
+    width: 70px;
+  }
+  .main-img {
+    width: 350px;
+    border-radius: 10px;
+    margin-top: 40px;
+  }
+  .list-group-item {
+    background-color: #d7e5ca;
+  }
+  /* Improved styling for the meal name */
+  .h2 {
+    text-align: center;
+    font-family: "Lobster", cursive;
+    font-size: 36px;
+    color: #618264;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #fff, 2px -1px 0 #fff, -1px 1px 0 #fff,
+      2px 1px 0 #fff;
+  }
+  .h3 {
+    color: #ffbb5c;
+    font-weight: bold;
+  }
+  .p {
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 700;
+  }
