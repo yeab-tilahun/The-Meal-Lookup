@@ -113,7 +113,17 @@ export const displayDetail = (dataObj) => {
     const pInstructions = document.createElement('p');
     pInstructions.classList.add('p');
     pInstructions.innerHTML = `<br />${dataObj.instruction}<br />`;
+
+    const videoID = getYouTubeVideoId(dataObj.videoUrl)
+    const iframeElement = document.createElement('iframe');
+    iframeElement.width = '560';
+    iframeElement.height = '315';
+    iframeElement.src = `https://www.youtube.com/embed/${videoID}`;
+    iframeElement.allowFullscreen = true;
+
+
     col3Div.appendChild(pInstructions);
+    col3Div.appendChild(iframeElement);
 
     rowDiv2.appendChild(col3Div);
 
@@ -156,7 +166,6 @@ export const displayDetail = (dataObj) => {
 
         ulElement.appendChild(liIngredient);
     });
-
     rowIngredientList.appendChild(ulElement);
     col4Div.appendChild(rowIngredientList);
 
@@ -209,7 +218,7 @@ export const homePage = () => {
     inputElement.type = 'text';
     inputElement.classList.add('form-control');
     inputElement.id = 'searchInput';
-    inputElement.placeholder = 'Enter meal';
+    inputElement.placeholder = "Enter meal to Search For example: Chicken "
 
     const buttonElement = document.createElement('button');
     buttonElement.classList.add('button-input', 'btn', 'btn-outline-dark');
@@ -229,4 +238,9 @@ export const homePage = () => {
 
     document.body.appendChild(containerDiv);
 
+}
+
+function getYouTubeVideoId(url) {
+    const urlParams = new URLSearchParams(new URL(url).search);
+    return urlParams.get("v");
 }

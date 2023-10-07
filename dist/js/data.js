@@ -18,6 +18,7 @@ export const request = async (url) => {
                     const ingredients = []
                     const ingredientsImg = []
                     const mealImage = []
+                    const mealVideo = []
 
                     for (let x = 0; x < meal.length; x++) {
                         mealID.push(meal[x].idMeal)
@@ -35,8 +36,8 @@ export const request = async (url) => {
                         }
 
                         mealImage.push(meal[x].strMealThumb)
+                        mealVideo.push(meal[x].strYoutube)
                     }
-
                     const dataObj = {
                         mealID: mealID,
                         name: mealName,
@@ -44,6 +45,7 @@ export const request = async (url) => {
                         instruction: instructions,
                         ingredients: ingredients,
                         ingredientimg: ingredientsImg,
+                        videoUrl: mealVideo,
                     }
                     return dataObj
                 }
