@@ -5,7 +5,9 @@ import { displaySearchResult, displayDetail, clearDisplay, homePage } from './do
 
 const initApp = () => {
     const searchBtn = document.getElementById("search-btn")
+    const searchInput = document.getElementById("searchInput")
     searchBtn.addEventListener("click", search)
+    searchInput.addEventListener('keyup', handleEnterKeyPress);
 
 }
 
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", initApp)
 
 
 export const search = async (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     const query = document.getElementById("searchInput").value
     const data = await request(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
     clearDisplay()
@@ -32,4 +34,10 @@ export const detail = async (event, data) => {
     clearDisplay()
     homePage()
     displayDetail(dataJson)
+}
+
+function handleEnterKeyPress(event) {
+    if (event.key === 'Enter') {
+        search()
+    }
 }

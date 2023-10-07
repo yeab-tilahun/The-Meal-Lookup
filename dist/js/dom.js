@@ -197,7 +197,7 @@ export const homePage = () => {
     const h3Header = document.createElement('h3');
     h3Header.classList.add('header');
     h3Header.textContent = 'The Meal Lookup';
-    containerDiv.addEventListener("click", () => {
+    h3Header.addEventListener("click", () => {
         window.location.reload()
     })
     containerDiv.appendChild(h3Header);
@@ -224,6 +224,13 @@ export const homePage = () => {
     buttonElement.classList.add('button-input', 'btn', 'btn-outline-dark');
     buttonElement.id = 'search-btn';
     buttonElement.textContent = 'Search';
+
+    function handleEnterKeyPress(event) {
+        if (event.key === 'Enter') {
+            search()
+        }
+    }
+    inputElement.addEventListener('keyup', handleEnterKeyPress);
 
     buttonElement.addEventListener("click", search)
 
