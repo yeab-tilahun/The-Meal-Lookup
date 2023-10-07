@@ -244,9 +244,63 @@ export const homePage = () => {
     containerDiv.appendChild(rowDiv);
 
     document.body.appendChild(containerDiv);
+    footer()
 
 }
 
+export const footer = () => {
+    // Create the footer element
+    const footer = document.createElement('footer');
+    footer.classList.add('bg-dark', 'text-light', 'text-center', 'py-2');
+
+    // Create the container div
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('container');
+
+    // Create the "Made by Yeab" paragraph
+    const madeByParagraph = document.createElement('p');
+    madeByParagraph.classList.add('mb-0');
+    madeByParagraph.textContent = 'Made by Yeab.';
+
+    // Create the social icons div
+    const socialIconsDiv = document.createElement('div');
+    socialIconsDiv.classList.add('social-icons', 'mt-3');
+
+    // Create GitHub link and icon
+    const githubLink = createSocialLink('https://github.com/yeab-tilahun', 'fab fa-github fa-2x');
+    socialIconsDiv.appendChild(githubLink);
+
+    // Create LinkedIn link and icon
+    const linkedinLink = createSocialLink('https://www.linkedin.com/in/yeabsira-tilahun-55a580177/', 'fab fa-linkedin fa-2x');
+    socialIconsDiv.appendChild(linkedinLink);
+
+    // Create Telegram link and icon
+    const telegramLink = createSocialLink('https://t.me/YeabTilahun', 'fab fa-telegram fa-2x');
+    socialIconsDiv.appendChild(telegramLink);
+
+    // Append all elements to the footer
+    containerDiv.appendChild(madeByParagraph);
+    containerDiv.appendChild(socialIconsDiv);
+    footer.appendChild(containerDiv);
+
+    // Append the footer to the document body or any other container element
+    document.body.appendChild(footer);
+
+    // Helper function to create social links
+    function createSocialLink(link, iconClass) {
+        const socialLink = document.createElement('a');
+        socialLink.href = link;
+        socialLink.target = '_blank';
+        socialLink.classList.add('text-light', 'me-3');
+
+        const icon = document.createElement('i');
+        icon.className = iconClass; // Set the class attribute directly
+
+        socialLink.appendChild(icon);
+        return socialLink;
+    }
+
+}
 function getYouTubeVideoId(url) {
     const urlParams = new URLSearchParams(new URL(url).search);
     return urlParams.get("v");

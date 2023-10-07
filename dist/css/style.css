@@ -86,3 +86,11 @@ li img {
 span {
   font-family: "Lobster", cursive;
 }
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  font-family: "Grandstander", cursive;
+  z-index: 1;
+}
