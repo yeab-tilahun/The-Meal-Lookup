@@ -32,5 +32,4 @@ export const detail = async (event, data) => {
     clearDisplay()
     homePage()
     displayDetail(dataJson)
-    // console.log(dataJson);
 }

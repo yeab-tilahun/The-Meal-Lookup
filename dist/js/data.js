@@ -19,7 +19,6 @@ export const request = async (url) => {
                     const ingredientsImg = []
                     const mealImage = []
 
-
                     for (let x = 0; x < meal.length; x++) {
                         mealID.push(meal[x].idMeal)
                         mealName.push(meal[x].strMeal)
@@ -38,7 +37,6 @@ export const request = async (url) => {
                         mealImage.push(meal[x].strMealThumb)
                     }
 
-
                     const dataObj = {
                         mealID: mealID,
                         name: mealName,
@@ -47,12 +45,6 @@ export const request = async (url) => {
                         ingredients: ingredients,
                         ingredientimg: ingredientsImg,
                     }
-
-
-
-
-
-                    console.log(data)
                     return dataObj
                 }
             } else {
@@ -68,7 +60,7 @@ export const request = async (url) => {
 
 }
 
-const checkURL = (url, expectedURL = 'https:') => {
+const checkURL = (url) => {
     try {
         new URL(url)
         return true
