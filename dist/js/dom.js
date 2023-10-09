@@ -58,6 +58,12 @@ export const displaySearchResult = (dataObj) => {
 
     }
     containerDiv.appendChild(rowDiv);
+
+    const spaceDiv = document.createElement('div');
+    spaceDiv.classList.add('space');
+    spaceDiv.innerHTML = '<br /><br /><br /><br /><br />';
+    containerDiv.appendChild(spaceDiv);
+
     document.body.appendChild(containerDiv);
 
 }
@@ -68,7 +74,7 @@ export const displayDetail = (dataObj) => {
     homePage()
 
     const containerDiv = document.createElement('div');
-    containerDiv.classList.add('container');
+    containerDiv.classList.add('container', 'text-center', 'mt-5');
 
     const rowDiv1 = document.createElement('div');
     rowDiv1.classList.add('row');
@@ -116,11 +122,10 @@ export const displayDetail = (dataObj) => {
 
     const videoID = getYouTubeVideoId(dataObj.videoUrl)
     const iframeElement = document.createElement('iframe');
-    iframeElement.width = '560';
-    iframeElement.height = '315';
+    iframeElement.width = '360';
+    iframeElement.height = '280';
     iframeElement.src = `https://www.youtube.com/embed/${videoID}`;
     iframeElement.allowFullscreen = true;
-
 
     col3Div.appendChild(pInstructions);
     col3Div.appendChild(iframeElement);
@@ -176,6 +181,11 @@ export const displayDetail = (dataObj) => {
     rowDiv2.appendChild(col4Div);
 
     containerDiv.appendChild(rowDiv2);
+
+    const spaceDiv = document.createElement('div');
+    spaceDiv.classList.add('space');
+    spaceDiv.innerHTML = '<br /><br /><br /><br /><br />';
+    containerDiv.appendChild(spaceDiv);
 
     document.body.appendChild(containerDiv);
 
@@ -243,6 +253,11 @@ export const homePage = () => {
 
     containerDiv.appendChild(rowDiv);
 
+    const spaceDiv = document.createElement('div');
+    spaceDiv.classList.add('space');
+    spaceDiv.innerHTML = '<br /><br /><br /><br /><br />';
+    containerDiv.appendChild(spaceDiv);
+
     document.body.appendChild(containerDiv);
     footer()
 
@@ -251,7 +266,7 @@ export const homePage = () => {
 export const footer = () => {
     // Create the footer element
     const footer = document.createElement('footer');
-    footer.classList.add('bg-dark', 'text-light', 'text-center', 'py-2');
+    footer.classList.add('bg-dark', 'text-light', 'text-center', 'py-2', 'fixed-bottom');
 
     // Create the container div
     const containerDiv = document.createElement('div');
